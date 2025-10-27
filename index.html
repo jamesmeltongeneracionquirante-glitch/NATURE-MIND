@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature Inspiration</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#000; color:white; }
+
+  /* Header */
+  header {
+    position:fixed; top:0; width:100%; height:60px;
+    background:rgba(0,0,0,0.7); display:flex; justify-content:space-between; align-items:center;
+    padding:0 40px; z-index:1000;
+  }
+  header .logo { font-size:24px; color:#a5f3fc; font-weight:bold; }
+  nav ul { display:flex; list-style:none; }
+  nav ul li { margin-left:20px; }
+  nav ul li a { text-decoration:none; color:#ddd; transition:0.3s; }
+  nav ul li a.active, nav ul li a:hover { color:#38bdf8; }
+
+  /* Sections */
+  section {
+    position:absolute; width:100%; height:100vh; top:0; left:0;
+    display:flex; justify-content:center; align-items:center;
+    background-size:cover; background-position:center; text-align:justify;
+    transition:opacity 0.8s ease; opacity:0; overflow-y:auto; padding:80px;
+  }
+  section.active { opacity:1; z-index:1; }
+
+  .content {
+    max-width:900px; background:rgba(0,0,0,0.4);
+    padding:30px; border-radius:12px; line-height:1.8;
+  }
+
+  h1, h2 { text-align:center; margin-bottom:20px; color:#fff; }
+
+  .nav-btn {
+    position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+    background:rgba(30,64,175,0.8); color:white; border:none;
+    padding:12px 25px; border-radius:25px; cursor:pointer; transition:0.3s;
+  }
+  .nav-btn:hover { background:#3b82f6; }
+
+  /* Fullscreen Nature section fix */
+  #nature {
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    overflow-y:auto;
+  }
+  #nature .content {
+    width:100%;
+    max-width:1200px;
+    padding:60px;
+    background:rgba(0,0,0,0.5);
+  }
+
+  /* Floating bubbles animation */
+  .bubbles {
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+
+  .bubble {
+    position:absolute;
+    bottom:-100px;
+    background:rgba(255,255,255,0.2);
+    border-radius:50%;
+    animation: rise 10s infinite ease-in;
+  }
+
+  @keyframes rise {
+    0% { transform:translateY(0) scale(1); opacity:1; }
+    100% { transform:translateY(-120vh) scale(1.5); opacity:0; }
+  }
+
+  /* Snow/Rain effect */
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0.3; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="bubbles" id="bubbles"></div>
+
+<header>
+  <div class="logo">NatureMind</div>
+  <nav>
+    <ul>
+      <li><a href="#" class="active" data-target="home">Home</a></li>
+      <li><a href="#" data-target="nature">When Nature Speaks</a></li>
+      <li><a href="#" data-target="reflection">Reflection</a></li>
+      <li><a href="#" data-target="quotes">Quotes</a></li>
+      <li><a href="#" data-target="contact">Personal Info</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" style="background-image:url('mountains.jpg');">
+  <div class="content">
+    <h1>Find Calm in Every Mountain</h1>
+    <h2>Peace & Serenity.
+    <p>“The higher you climb, the clearer the view.”</p>
+  </div>
+  <button class="nav-btn" data-next="nature">View Next</button>
+</section>
+
+<!-- WHEN NATURE SPEAKS -->
+<section id="nature" style="background-image:url('2.jpg');">
+ <style>
+    #reflection .content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 12px;
+      color: #fff;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #reflection h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #aee6ff;
+      text-shadow: 0 0 10px #66d9ff;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .quote-box p {
+      text-indent: 40px;
+      text-align: justify;
+      line-height: 1.7;
+    }
+  </style>
+  
+  <div class="content">
+    <h2>When Nature Speaks</h2>
+    <p>Nature has a way of talking to us, even when we don’t notice. It speaks in the wind that touches our face, in the sound of the waves, and in the silence of the mountains. It doesn’t use words, but we can feel its message — to slow down, to breathe, and to remember that life is still beautiful even when it feels hard.</p>
+
+    <p>When we walk under the trees, it feels like nature is saying, “You’ve been tired for too long, rest here.” The wind hugs us, the ground feels safe, and the world reminds us that it’s okay to stop for a while. The earth doesn’t care about what we’ve done wrong; it only wants us to breathe and begin again.</p>
+
+    <p>The mountains teach us to stand strong even when life gets heavy. The rivers show us to keep moving, even when the way is not straight. The sun reminds us that no matter how dark the night is, it will always rise again. And the ocean tells us that calm always comes after the storm.</p>
+
+    <p>Sometimes life hurts. We fall apart, we lose people, and we don’t understand why. But just like trees that lose their leaves, we will grow again. Healing doesn’t happen in one day — it grows slowly, like roots under the ground. Even when we can’t see it, something inside us is still growing.</p>
+
+    <p>The rain may fall hard, but it cleans the dust of yesterday. The fire may destroy, but new life always comes from the ashes. Nature shows us that endings are not the end — they are new beginnings wearing a different face. Every pain we feel has a reason, and every season of our life has a purpose.</p>
+
+    <p>Sometimes we feel small when we look at the stars, but that smallness reminds us that we are part of something big. We belong to this world, to its love, its silence, and its peace. We don’t need to be perfect — we just need to keep going, keep growing, and keep believing.</p>
+
+    <p>The trees don’t rush to grow. The flowers don’t compete to bloom first. They just wait, trusting that everything will happen at the right time. Maybe that’s what we need too — to trust the process, to believe that even our waiting has meaning.</p>
+
+    <p>There is healing in silence. When we sit beside a river or watch the clouds move, we begin to feel peace inside us. We realize that healing happens when we allow ourselves to rest, to forgive, and to begin again. Just like the forest after a fire, we too can rise stronger than before.</p>
+
+    <p>The mountain stands tall not because it was never broken, but because it learned to stay strong even with scars. The river keeps flowing not because it is always gentle, but because it knows how to find a way around rocks and pain. Life is like that — not perfect, but still beautiful.</p>
+
+    <p>So, take your time. Cry if you need to, rest if you must, but never forget that you can always stand up again. Like nature, you are meant to heal, to grow, and to keep shining.</p>
+
+    <p>You belong here — to the wind, to the light, and to the earth. You are made of the same beauty that lives in every sunset and every flower. And no matter how hard life becomes, remember this: you are still part of something beautiful.</p>
+  </div>
+
+  <button class="nav-btn" data-next="reflection">View Next</button>
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection" style="background-image:url('3.jpg'); background-size:cover; background-position:center;">
+  <style>
+    #reflection .content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 12px;
+      color: #fff;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #reflection h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #aee6ff;
+      text-shadow: 0 0 10px #66d9ff;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .quote-box p {
+      text-indent: 40px;
+      text-align: justify;
+      line-height: 1.7;
+    }
+  </style>
+
+  <div class="content">
+    <h2>Reflection</h2>
+
+    <div class="quote-box">
+      <p>
+        Life teaches us through calm and storm alike. Every sunrise brings another chance to begin again,
+        to breathe, to forgive, and to move forward. Even when days feel heavy, there is always beauty
+        waiting to be found — in silence, in nature, and in hope.
+      </p>
+    </div>
+
+    <div class="quote-box">
+      <p>
+        Growth doesn’t always happen in easy places. Sometimes, we bloom in the cracks — learning that even
+        in struggle, we can rise with strength and grace. Like nature, we heal in our own time, and that’s enough.
+      </p>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="fashion2.jpg" alt="Nature 2" style="width:30%; border-radius:10px; margin:10px;">
+      <img src="fashion3.jpg" alt="Nature 3" style="width:30%; border-radius:10px; margin:10px;">
+    </div>
+  </div>
+  <button class="nav-btn" data-next="quotes">View Next</button>
+</section>
+
+<!-- QUOTES -->
+<section id="quotes" style="background-image:url('3.jpg'); background-size:cover; background-position:center; padding:50px 0;">
+  <style>
+    #quotes .content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 12px;
+      color: #fff;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #quotes h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #aee6ff;
+      text-shadow: 0 0 10px #66d9ff;
+      letter-spacing: 1px;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      font-style: italic;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quote-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+    }
+  </style>
+
+  <div class="content">
+    <h2>Quotes</h2>
+
+    <div class="quote-box">“Every sunrise brings new hope — keep moving forward.”</div>
+    <div class="quote-box">“Bloom where you are planted, even in the toughest soil.”</div>
+    <div class="quote-box">“Peace begins the moment you choose to let go of fear.”</div>
+    <div class="quote-box">“You grow through what you go through.”</div>
+    <div class="quote-box">“The darkest nights produce the brightest stars.”</div>
+    <div class="quote-box">“Rest is also part of growth — pause, breathe, and begin again.”</div>
+    <div class="quote-box">“Healing is not linear — some days you bloom, some days you rest.”</div>
+    <div class="quote-box">“Don’t rush your journey — flowers don’t bloom all at once.”</div>
+    <div class="quote-box">“Be the calm within your own storm.”</div>
+    <div class="quote-box">“Keep believing — light always finds a way through.”</div>
+  </div>
+</section>
+
+<!-- PERSONAL INFO -->
+<section id="contact" style="background-image:url('1.jpg'); background-size:cover; background-position:center; padding:50px 0;">
+  <div class="content">
+    <h2>Personal Information</h2>
+    <p>Name: James Melton Generacion Quirante</p>
+    <p>Course: Bachelor of Science in Computer Science</p>
+    <p>School: Negros Oriental State University Guihulngan Campus</p>
+    <p>Contact number: 09946581070</p>
+    <p>Email: <a href="mailto:jamesmeltongeneracionquirante@gmail.com" style="color:#a5b4fc;">jamesmeltongeneracionquirante@gmail.com</a></p>
+  </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+const navBtns = document.querySelectorAll('.nav-btn');
+
+function showSection(id) {
+  sections.forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if(link.dataset.target === id) link.classList.add('active');
+  });
+}
+
+showSection('home');
+navLinks.forEach(link => link.addEventListener('click', e => {
+  e.preventDefault();
+  showSection(link.dataset.target);
+}));
+navBtns.forEach(btn => btn.addEventListener('click', () => showSection(btn.dataset.next)));
+
+// Bubble animation
+const bubblesContainer = document.getElementById('bubbles');
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  const size = Math.random() * 40 + 10;
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${Math.random() * window.innerWidth}px`;
+  bubble.style.animationDuration = `${8 + Math.random() * 6}s`;
+  bubblesContainer.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 14000);
+}
+setInterval(createBubble, 300);
+
+// Snow/Rain effect (continuous)
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄'; // replace with '|' if you want rain
+  snowflake.style.left = Math.random() * 100 + 'vw';
+  snowflake.style.animationDuration = 5 + Math.random() * 10 + 's';
+  snowflake.style.fontSize = 10 + Math.random() * 20 + 'px';
+  snowflake.style.animationDelay = Math.random() * 5 + 's';
+  document.body.appendChild(snowflake);
+  setTimeout(() => snowflake.remove(), 15000);
+}
+setInterval(createSnowflake, 200);
+</script>
+
+</body>
+</html>
